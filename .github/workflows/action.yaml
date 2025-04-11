@@ -3,46 +3,27 @@ name: Release
 on:
   push:
     branches:
-      - main # Triggers when code is pushed to the main branch
+      - main  # or 'master', depending on your default branch
 
 jobs:
   release:
-    permissions:
-        contents: write
-    runs-on: ubuntu-latest # Runs on an Ubuntu runner
+    name: Semantic Release
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository code
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "20.x" # Use the Node.js version required for your project
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
 
-      # Step 3: Cache Node.js modules to speed up future builds
-      - name: Cache Node.js modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+      - name: Install dependencies
+        run: npm ci
 
-      # Step 4: Install dependencies
-      - name: Install Dependencies
-        run: npm install --save-dev \
-             semantic-release \
-             semantic-release/changelog \
-             semantic-release/commit-analyzer \
-             semantic-release/release-notes-generator \
-             semantic-release/github \
-             semantic-release/git
-
-      # Step 5: Run semantic-release
-      - name: Run Semantic Release
-        run: npx semantic-release
+      - name: Semantic Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Provide the GitHub token for authentication
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
