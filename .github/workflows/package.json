@@ -1,31 +1,41 @@
-"release": {
-"branches": [
-  "main"
-],
-"plugins": [
-  "@semantic-release/commit-analyzer",
-  "@semantic-release/release-notes-generator",
-  "@semantic-release/changelog",
-  [
-    "@semantic-release/github",
-    {
-      "assets": [
+{
+  "name": "semantic-versioning",
+  "version": "1.0.0",
+  "description": "Semantic release demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/github",
         {
-          "path": "dist.zip",
-          "label": "Distribution"
+          "assets": [
+            {
+              "path": "dist.zip",
+              "label": "Distribution"
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]
-    }
-  ],
-  [
-    "@semantic-release/git",
-    {
-      "assets": [
-        "package.json",
-        "CHANGELOG.md"
-      ],
-      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-    }
-  ]
-]
+    ]
+  },
+  "license": "MIT"
 }
