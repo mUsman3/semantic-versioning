@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/mUsman3/semantic-versioning/compare/v0.2.0...v0.3.0) (2025-04-11)
+
+
+### Features
+
+* trigger first release ([207f580](https://github.com/mUsman3/semantic-versioning/commit/207f5802c585226fa7561af05625d90d6116dbc3))
+
 # [0.2.0](https://github.com/mUsman3/semantic-versioning/compare/v0.1.0...v0.2.0) (2025-04-11)
 
 
