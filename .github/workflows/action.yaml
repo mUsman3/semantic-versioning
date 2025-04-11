@@ -7,6 +7,8 @@ on:
 
 jobs:
   release:
+    permissions:
+        contents: write
     name: Semantic Release
     runs-on: ubuntu-latest
 
