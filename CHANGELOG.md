@@ -1,3 +1,26 @@
+## [0.3.4](https://github.com/mUsman3/semantic-versioning/compare/v0.3.3...v0.3.4) (2025-04-13)
+
+
+### Bug Fixes
+
+* commit ([def6494](https://github.com/mUsman3/semantic-versioning/commit/def64947f483ebb5c9f178b1a7c9a0017c9b7719))
+
+## [0.3.3](https://github.com/mUsman3/semantic-versioning/compare/v0.3.2...v0.3.3) (2025-04-13)
+
+
+### Bug Fixes
+
+* commit ([aefdfaf](https://github.com/mUsman3/semantic-versioning/commit/aefdfaf51e037bbd9b7f65978419784c4c72ab8b))
+
+## [0.3.2](https://github.com/mUsman3/semantic-versioning/compare/v0.3.1...v0.3.2) (2025-04-13)
+
+
+### Bug Fixes
+
+* commit ([0df5ae0](https://github.com/mUsman3/semantic-versioning/commit/0df5ae013c91c08ccfd05418d1ced6587341abed))
+* commit ([57efdd6](https://github.com/mUsman3/semantic-versioning/commit/57efdd60b61337feaf813547e927a907d97b2d34))
+* commit ([42eecd6](https://github.com/mUsman3/semantic-versioning/commit/42eecd6611e18ffedf3380559d24077c63b94d60))
+
 ## [0.3.1](https://github.com/mUsman3/semantic-versioning/compare/v0.3.0...v0.3.1) (2025-04-11)
 
 
