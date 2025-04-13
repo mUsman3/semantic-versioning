@@ -1,3 +1,10 @@
+## [0.3.4](https://github.com/mUsman3/semantic-versioning/compare/v0.3.3...v0.3.4) (2025-04-13)
+
+
+### Bug Fixes
+
+* commit ([def6494](https://github.com/mUsman3/semantic-versioning/commit/def64947f483ebb5c9f178b1a7c9a0017c9b7719))
+
 ## [0.3.3](https://github.com/mUsman3/semantic-versioning/compare/v0.3.2...v0.3.3) (2025-04-13)
 
 
