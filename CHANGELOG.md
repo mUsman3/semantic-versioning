@@ -1,3 +1,11 @@
+## [0.3.6](https://github.com/mUsman3/semantic-versioning/compare/v0.3.5...v0.3.6) (2025-04-13)
+
+
+### Bug Fixes
+
+* refactor API to improve performance and scalability ([117824b](https://github.com/mUsman3/semantic-versioning/commit/117824b4c7a5ae53b8ae3cda6652410e2f472e65))
+* refactor API to improve performance and scalability ([a421a53](https://github.com/mUsman3/semantic-versioning/commit/a421a531b0f588212212ec5a4183a9c01d5e6006))
+
 ## [0.3.5](https://github.com/mUsman3/semantic-versioning/compare/v0.3.4...v0.3.5) (2025-04-13)
 
 
