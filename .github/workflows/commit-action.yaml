@@ -11,6 +11,7 @@ jobs:
         contents: write
     name: Semantic Release
     runs-on: ubuntu-latest
+    # if: ${{ github.ref == 'refs/heads/main'}}
 
     steps:
       - name: Checkout code
@@ -25,6 +26,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+  publish-release:
+    permissions:
+        contents: write
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main'}}
+    needs: [commit-release]
+
+    steps:
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB }}
