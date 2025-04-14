@@ -1,41 +1,40 @@
-# name: Commit-Release
+name: Commit-Release
 
-# on:
-#   push:
-#     branches:
-#       - 'feature/**' 
+on:
+  push:
+    branches:
+      - 'feature/**' 
 
-# jobs:
-#   commit-release:
-#     permissions:
-#         contents: write
-#     name: Semantic Release
-#     runs-on: ubuntu-latest
-#     # if: ${{ github.ref == 'refs/heads/main'}}
+jobs:
+  commit-release:
+    permissions:
+        contents: write
+    name: Semantic Release
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: 18
-#           registry-url: 'https://registry.npmjs.org'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
 
-#       - name: Install dependencies
-#         run: npm install
+      - name: Install dependencies
+        run: npm install
 
-#   publish-release:
-#     permissions:
-#         contents: write
-#     name: Semantic Release
-#     runs-on: ubuntu-latest
-#     if: ${{ github.ref == 'refs/heads/main'}}
-#     needs: [commit-release]
+  publish-release:
+    permissions:
+        contents: write
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main'}}
+    needs: [commit-release]
 
-#     steps:
-#       - name: Semantic Release Publish
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB }}
-#         run: npx semantic-release
+    steps:
+      - name: Semantic Release Publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+        run: npx semantic-release
