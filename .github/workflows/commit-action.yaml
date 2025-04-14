@@ -35,7 +35,7 @@ jobs:
     needs: [commit-release]
 
     steps:
-      - name: Semantic Release
+      - name: Semantic Release Publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB }}
         run: npx semantic-release
