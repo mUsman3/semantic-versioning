@@ -1,4 +1,4 @@
-name: Commit-Release
+name: main-Commit-Release
 
 on:
   pull_request:
@@ -6,9 +6,9 @@ on:
       - 'main'  
 
 jobs:
-  commit-release:
+  main-commit-release:
     permissions:
-        contents: write
+      contents: write
     name: Semantic Release
     runs-on: ubuntu-latest
 
@@ -31,7 +31,7 @@ jobs:
     name: Semantic Release
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main'}}
-    needs: [commit-release]
+    needs: [main-commit-release]
 
     steps:
       - name: Semantic Release Publish
